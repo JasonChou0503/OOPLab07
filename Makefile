@@ -22,3 +22,6 @@ $(TARGET): main.cpp $(OBJS)
 # Compilation rule for object files with automatic dependency generation
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR) Makefile
 	$(CXX) $(WARNINGS) $(CXXFLAGS) -c $< -o $@
+clean:
+	@echo "Cleaning up..."
+	rm -rf $(OBJDIR)/*.o $(TARGET)
